@@ -1,0 +1,21 @@
+#Spring boot application.yml
+
+
+spring:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: test
+
+  #profiles : dev
+server:
+  port: 8080
+  tomcat:
+    max-threads: 500
+    accesslog:
+      enabled: true
+      directory: ../logs
+  error:
+    whitelabel:
+      enabled: false
