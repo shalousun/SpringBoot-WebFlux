@@ -1,5 +1,6 @@
 package com.test.webflux.controller;
 
+import com.power.common.model.CommonResult;
 import com.test.webflux.model.UserInfo;
 import com.test.webflux.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class UserInfoController {
        return userInfoService.save(userInfo);
     }
 
+    @PostMapping("insert")
+    public Mono<CommonResult> insert(@RequestBody UserInfo userInfo){
+        return userInfoService.insert(userInfo);
+    }
+
     /**
      * 删除
      * @param id
@@ -35,6 +41,11 @@ public class UserInfoController {
     @GetMapping("delete/{id}")
     public Mono<Void> delete(@PathVariable Long id){
         return userInfoService.delete(id);
+    }
+
+    @GetMapping("deleteById/{id}")
+    public Mono<CommonResult> deleteById(@PathVariable Long id){
+        return userInfoService.deleteById(id);
     }
 
     /**
@@ -47,6 +58,11 @@ public class UserInfoController {
         return userInfoService.getUser(id);
     }
 
+    @GetMapping("getById/{id}")
+    public Mono<CommonResult> getById(@PathVariable Long id){
+        return userInfoService.getUserById(id);
+    }
+
     /**
      * 查询所有用户信息
      * @return
@@ -54,5 +70,14 @@ public class UserInfoController {
     @GetMapping("list")
     public Flux<UserInfo> listUser(){
         return userInfoService.listUser();
+    }
+
+    /**
+     * 查询所有用户信息
+     * @return
+     */
+    @GetMapping("listUser")
+    public Flux<CommonResult<UserInfo>> listAllUser(){
+        return userInfoService.listAllUser();
     }
 }
