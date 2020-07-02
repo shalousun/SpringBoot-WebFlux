@@ -1,0 +1,26 @@
+{
+  "serverUrl": "http://127.0.0.1",
+  "isStrict": false,
+  "allInOne": true,
+  "outPath": "d://md2",
+  "coverOld": true,
+  "packageFilters": "",
+  "md5EncryptedHtmlName": false,
+  "projectName": "SpringBoot-WebFlux",
+  "skipTransientField": true,
+  "errorCodeDictionaries": [{
+    "title": "title",
+    "enumClassName": "com.test.webflux.enums.ErrorCodeEnum",
+    "codeField": "code",
+    "descField": "message"
+  }],
+  "revisionLogs": [
+    {
+      "version": "1.0",
+      "status": "use",
+      "author": "yu",
+      "revisionTime": "2020-07-02",
+      "remarks": "desc"
+    }
+  ]
+}

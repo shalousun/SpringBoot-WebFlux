@@ -7,6 +7,9 @@ import org.springframework.data.annotation.Id;
  */
 public class UserInfo {
 
+    /**
+     * 用户id
+     */
     @Id
     private Long id;
 

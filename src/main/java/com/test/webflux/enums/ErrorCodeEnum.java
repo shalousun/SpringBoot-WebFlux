@@ -1,10 +1,12 @@
 package com.test.webflux.enums;
 
+import com.power.common.interfaces.IMessage;
+
 /**
  * Error code enum
  * @author yu on 2018/09/29.
  */
-public enum ErrorCodeEnum {
+public enum ErrorCodeEnum implements IMessage {
 
     SUCCESS("0000", "success"),
 
@@ -18,24 +20,24 @@ public enum ErrorCodeEnum {
 
     private String code;
 
-    private String desc;
+    private String msg;
 
-    ErrorCodeEnum(String code, String desc) {
+    ErrorCodeEnum(String code, String msg) {
         this.code = code;
-        this.desc = desc;
+        this.msg = msg;
     }
 
     public String getCode() {
         return this.code;
     }
 
-
-    public String getDesc() {
-        return desc;
+    @Override
+    public String getMessage() {
+        return msg;
     }
 
     @Override
     public String toString() {
-        return "[" + this.code + "]" + this.desc;
+        return "[" + this.code + "]" + this.msg;
     }
 }
